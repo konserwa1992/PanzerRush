@@ -1,7 +1,6 @@
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\TankModels\Hull\PanzerKpfII.xnb
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\TankModels\Hull\pzIII.xnb
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\grass.xnb
-C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\Grid\grass.json
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\Maps\map1.json
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\RogueLike.exe
 C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\RogueLike.pdb
@@ -30,3 +29,4 @@ C:\Users\user\source\repos\RogueLike\PanzerRush\obj\x86\Debug\PanzerRushClient.c
 C:\Users\user\source\repos\RogueLike\PanzerRush\obj\x86\Debug\RogueLike.exe
 C:\Users\user\source\repos\RogueLike\PanzerRush\obj\x86\Debug\RogueLike.pdb
 C:\Users\user\source\repos\RogueLike\PanzerRush\obj\x86\Debug\PanzerRushClient.csprojResolveAssemblyReference.cache
+C:\Users\user\source\repos\RogueLike\PanzerRush\bin\Windows\x86\Debug\Content\Grid\BasicSheet.json

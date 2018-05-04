@@ -12,6 +12,7 @@ namespace RogueLike
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+		Texture2D _tex;
 
 		Camera camera;
 		MeshModel mesh;
@@ -33,14 +34,16 @@ namespace RogueLike
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-			camera = new Camera(GraphicsDevice, Vector3.Zero, new Vector3(15, 15, -15));
+			camera = new Camera(GraphicsDevice, Vector3.Zero, new Vector3(50, 50, 20));
 			mesh = new MeshModel();
 			mesh.LoadMesh(Content, "TankModels\\Hull\\PanzerKpfII");
 
 
 			StreamReader gridJson = new StreamReader(Path.GetFullPath($"Content\\Maps\\map1.json"));
 			map = JsonConvert.DeserializeObject<Map>(gridJson.ReadToEnd());
-			map.LoadLayerGrids(); 
+			map.LoadLayerGrids(GraphicsDevice);
+
+			_tex = Content.Load<Texture2D>("grass");
 		}
 
         protected override void UnloadContent()
@@ -63,7 +66,9 @@ namespace RogueLike
         {
 			GraphicsDevice.Clear(ClearOptions.Target | ClearOptions.DepthBuffer, Color.DarkSlateBlue, 1.0f, 0);
 
-			mesh.Draw(camera);
+			//mesh.Draw(camera);
+
+			map.Draw(GraphicsDevice, camera, _tex);
 
 		}
     }

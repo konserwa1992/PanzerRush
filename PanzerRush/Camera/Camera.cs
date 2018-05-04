@@ -32,7 +32,7 @@ namespace RogueLike
 		public void Update(GameTime gameTime)
 		{
 			View = Matrix.CreateLookAt(Position, LookAtPosition, Vector3.Up);
-			Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), GraphicDevice.Viewport.AspectRatio, 1.0f, 1000.0f);
+			Projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45), GraphicDevice.Viewport.AspectRatio, 0.1f, 1000.0f);
 		}
     }
 }
