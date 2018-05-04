@@ -4,3 +4,7 @@
 *.cache
 
 *.exe
+
+*.pdb
+
+*.xnb

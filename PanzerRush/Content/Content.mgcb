@@ -51,7 +51,6 @@
 /processorParam:TextureFormat=Compressed
 /build:TankModels/Hull/pzIII.dae
 
-
 #begin grass.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -63,4 +62,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:grass.png
+
+#begin road1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:road1.png
 

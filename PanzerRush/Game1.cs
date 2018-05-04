@@ -34,7 +34,7 @@ namespace RogueLike
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-			camera = new Camera(GraphicsDevice, new Vector3(0, 0, 0), new Vector3(0, 200, 100));
+			camera = new Camera(GraphicsDevice, new Vector3(0, 0, 0), new Vector3(0, 300, 250));
 			mesh = new MeshModel();
 			mesh.LoadMesh(Content, "TankModels\\Hull\\PanzerKpfII");
 
