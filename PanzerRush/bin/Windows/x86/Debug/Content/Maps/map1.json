@@ -1,0 +1,16 @@
+{
+  "GridsTextureSheets": [
+    "grass"
+  ],
+  "Layers": [
+    {
+      "LayerIndex": 0,
+      "Name": "Layer0",
+      "MapData": [
+        [ 0, 0, 0 ],
+        [ 0, 0, 0 ]
+      ]
+    }
+  ]
+
+}

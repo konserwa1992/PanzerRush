@@ -1,0 +1,17 @@
+{
+  "GridsSheetsNames": [
+    "BasicSheet"
+  ],
+  "Layers": [
+    {
+      "SheetID": 1,
+      "LayerIndex": 0,
+      "Name": "GrassTest",
+      "MapGridsData": [
+        [ 1, 1, 1 ],
+        [ 1, 1, 1 ]
+      ]
+    }
+  ]
+
+}
