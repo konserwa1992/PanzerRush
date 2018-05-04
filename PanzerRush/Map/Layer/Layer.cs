@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using RogueLike;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,7 @@ namespace Maps
 		public string Name { get; set; }
 		public int[,] MapGridsData { get; set; }
 		public int SheetID { get; set; }
-		
-		private Texture2D MeshTexture { set; get; }
+	
 		private VertexBuffer LayerVertexBuffer { set; get; }
 		private GridsSheetContainer GridSheet { set; get; }
 
@@ -26,46 +26,55 @@ namespace Maps
 			List<VertexPositionNormalTexture> verticesList = new List<VertexPositionNormalTexture>();
 			GridSheet = (from gridSheet in gridTexSheets where gridSheet.ID == SheetID select gridSheet).FirstOrDefault();
 
-			GridSheet.LoadTexture(content);
-
-			for (int x = 0; x < MapGridsData.GetLength(0); x++)
+			if (GridSheet != null)
 			{
-				for (int y = 0; y < MapGridsData.Length / MapGridsData.GetLength(0); y++)
+				for (int x = 0; x < MapGridsData.GetLength(0); x++)
 				{
-					if (MapGridsData[x, y] != 0)
+					for (int y = 0; y <MapGridsData.Length/MapGridsData.GetLength(0); y++)
 					{
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3(x * 64, 0, y * 64), 
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g=>g.ID==MapGridsData[x, y]).X/ (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
+						if (MapGridsData[x, y] != 0)
+						{
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3(x * 64, LayerIndex, y * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
 
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3((x + 1) * 64, 0, y * 64), 
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3((x + 1) * 64, LayerIndex, y * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
 
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3((x + 1) * 64, 0, (y + 1) * 64), 
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3((x + 1) * 64, LayerIndex, (y + 1) * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
 
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3(x * 64, 0, y * 64), 
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3(x * 64, LayerIndex, y * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
 
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3((x + 1) * 64, 0, (y + 1) * 64),
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3((x + 1) * 64, LayerIndex, (y + 1) * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
 
-						verticesList.Add(new VertexPositionNormalTexture(
-							new Vector3(x * 64, 0, (y + 1) * 64), 
-							new Vector3(0, 1, 0),
-							new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+							verticesList.Add(new VertexPositionNormalTexture(
+								new Vector3(x * 64, LayerIndex, (y + 1) * 64),
+								new Vector3(0, 1, 0),
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+						}
 					}
 				}
 			}
+			else
+			{
+				using (StreamWriter LogWriter = new StreamWriter("Log.txt", true))
+				{
+					LogWriter.WriteLine($"SheetID is invalid:{SheetID} LayerName:{Name}");
+				}
+			}
+
 			LayerVertexBuffer = new VertexBuffer(device, VertexPositionNormalTexture.VertexDeclaration, verticesList.Count, BufferUsage.WriteOnly);
 			LayerVertexBuffer.SetData<VertexPositionNormalTexture>(verticesList.ToArray());
 		}
@@ -79,6 +88,8 @@ namespace Maps
 			basicEffect.Projection = camera.Projection;
 			basicEffect.TextureEnabled = true;
 			basicEffect.Texture = GridSheet.Texture;
+		
+
 			device.SetVertexBuffer(LayerVertexBuffer);
 
 			foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)

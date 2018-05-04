@@ -81,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\grass.png" />
+    <Content Include="Content\road1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +92,9 @@
     </MonoGameContentReference>
     <None Include="app.manifest" />
     <None Include="Content\Grid\BasicSheet.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Grid\road.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\Maps\map1.json">

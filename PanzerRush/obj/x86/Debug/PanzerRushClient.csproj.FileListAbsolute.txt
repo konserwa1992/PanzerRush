@@ -62,3 +62,6 @@ C:\Users\user\Documents\PanzerRush\PanzerRush\obj\x86\Debug\PanzerRushClient.csp
 C:\Users\user\Documents\PanzerRush\PanzerRush\obj\x86\Debug\RogueLike.exe
 C:\Users\user\Documents\PanzerRush\PanzerRush\obj\x86\Debug\RogueLike.pdb
 C:\Users\user\Documents\PanzerRush\PanzerRush\obj\x86\Debug\PanzerRushClient.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\PanzerRush\PanzerRush\bin\Windows\x86\Debug\Content\road1.xnb
+C:\Users\user\Documents\PanzerRush\PanzerRush\bin\Windows\x86\Debug\Content\road1.png
+C:\Users\user\Documents\PanzerRush\PanzerRush\bin\Windows\x86\Debug\Content\Grid\road.json

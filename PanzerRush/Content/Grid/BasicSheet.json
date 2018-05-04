@@ -1,9 +1,9 @@
 {
-  "ID": "1",
-  "TextureSizeX": "658",
+  "ID": "1", //Numer identyfikacyjny Grid.
+  "TextureSizeX": "658", //Rozmiar textury(obrazka)
   "TextureSizeY": "658",
-  "TextureName": "Grass",
-  "GridsDataList": [
+  "TextureName": "Grass", //Nazwa pliku z textur¹
+  "GridsDataList": [ //Wycinek z textury
     {
       "ID": "1",
       "Name": "Grass",

@@ -24,7 +24,9 @@ namespace Maps
 			{
 
 				StreamReader gridJson = new StreamReader(Path.GetFullPath($"Content\\Grid\\{gridFile}.json"));
-				Grids.Add(JsonConvert.DeserializeObject<GridsSheetContainer>(gridJson.ReadToEnd()));
+				GridsSheetContainer gridSheetListElement = JsonConvert.DeserializeObject<GridsSheetContainer>(gridJson.ReadToEnd());
+				gridSheetListElement.LoadTexture(content);
+				Grids.Add(gridSheetListElement);
 			}
 
 			InitMapMeshes(device,content);

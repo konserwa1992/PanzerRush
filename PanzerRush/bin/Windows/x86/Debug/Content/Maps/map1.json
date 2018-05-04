@@ -1,6 +1,6 @@
 {
   "GridsSheetsNames": [
-    "BasicSheet"
+    "BasicSheet","road"
   ],
   "Layers": [
     {
@@ -10,6 +10,15 @@
       "MapGridsData": [
         [ 1, 1, 1 ],
         [ 1, 1, 1 ]
+      ]
+    },
+    {
+      "SheetID": 2,
+      "LayerIndex": 1,
+      "Name": "GrassLayout2",
+      "MapGridsData": [
+        [ 1, 0, 0 ],
+        [ 1, 0, 0 ]
       ]
     }
   ]
