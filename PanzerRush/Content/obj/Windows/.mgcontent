@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/user/source/repos/RogueLike/PanzerRush/Content/TankModels/Hull/PanzerKpfII.fbx</File>
-    <File>C:/Users/user/source/repos/RogueLike/PanzerRush/Content/TankModels/Hull/pzIII.dae</File>
-    <File>C:/Users/user/source/repos/RogueLike/PanzerRush/Content/grass.png</File>
+    <File>C:/Users/user/Documents/PanzerRush/PanzerRush/Content/TankModels/Hull/PanzerKpfII.fbx</File>
+    <File>C:/Users/user/Documents/PanzerRush/PanzerRush/Content/TankModels/Hull/pzIII.dae</File>
+    <File>C:/Users/user/Documents/PanzerRush/PanzerRush/Content/grass.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -18,30 +18,31 @@ namespace Maps
 		public List<Layer> Layers { get; set; } = new List<Layer>();
 
 
-		public void LoadLayerGrids(GraphicsDevice device)
+		public void LoadLayerGrids(GraphicsDevice device, ContentManager content)
 		{
 			foreach (string gridFile in GridsSheetsNames)
 			{
+
 				StreamReader gridJson = new StreamReader(Path.GetFullPath($"Content\\Grid\\{gridFile}.json"));
 				Grids.Add(JsonConvert.DeserializeObject<GridsSheetContainer>(gridJson.ReadToEnd()));
 			}
 
-			InitMapMeshes(device);
+			InitMapMeshes(device,content);
 		}
 
-		private void InitMapMeshes(GraphicsDevice device)
+		private void InitMapMeshes(GraphicsDevice device, ContentManager content)
 		{
 			foreach (Layer layer in Layers)
 			{
-				layer.InitMesh(device, Grids);
+				layer.InitMesh(device, Grids,content);
 			}
 		}
 
-		public void Draw(GraphicsDevice device,Camera camera, Texture2D tex)
+		public void Draw(GraphicsDevice device,Camera camera)
 		{
 			foreach(Layer layer in Layers)
 			{
-				layer.Draw(device,camera, tex);
+				layer.Draw(device,camera);
 			}
 		}
 	}

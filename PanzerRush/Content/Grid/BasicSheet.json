@@ -1,8 +1,8 @@
 {
-  "ID": 1,
-  "GridSheet": "Grass",
+  "ID": "1",
   "TextureSizeX": "658",
   "TextureSizeY": "658",
+  "TextureName": "Grass",
   "GridsDataList": [
     {
       "ID": "1",

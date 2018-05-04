@@ -34,14 +34,14 @@ namespace RogueLike
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-			camera = new Camera(GraphicsDevice, Vector3.Zero, new Vector3(50, 50, 20));
+			camera = new Camera(GraphicsDevice, new Vector3(0, 0, 0), new Vector3(0, 200, 100));
 			mesh = new MeshModel();
 			mesh.LoadMesh(Content, "TankModels\\Hull\\PanzerKpfII");
 
 
 			StreamReader gridJson = new StreamReader(Path.GetFullPath($"Content\\Maps\\map1.json"));
 			map = JsonConvert.DeserializeObject<Map>(gridJson.ReadToEnd());
-			map.LoadLayerGrids(GraphicsDevice);
+			map.LoadLayerGrids(GraphicsDevice,Content);
 
 			_tex = Content.Load<Texture2D>("grass");
 		}
@@ -68,8 +68,7 @@ namespace RogueLike
 
 			//mesh.Draw(camera);
 
-			map.Draw(GraphicsDevice, camera, _tex);
-
+			map.Draw(GraphicsDevice, camera);
 		}
     }
 }

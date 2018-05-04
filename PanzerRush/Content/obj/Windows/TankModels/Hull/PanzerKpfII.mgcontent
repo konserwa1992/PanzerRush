@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/user/source/repos/RogueLike/PanzerRush/Content/TankModels/Hull/PanzerKpfII.fbx</SourceFile>
+  <SourceFile>C:/Users/user/Documents/PanzerRush/PanzerRush/Content/TankModels/Hull/PanzerKpfII.fbx</SourceFile>
   <SourceTime>2018-04-30T16:34:52.2164997+02:00</SourceTime>
-  <DestFile>C:/Users/user/source/repos/RogueLike/PanzerRush/Content/bin/Windows/TankModels/Hull/PanzerKpfII.xnb</DestFile>
-  <DestTime>2018-05-03T13:04:22.5435807+02:00</DestTime>
+  <DestFile>C:/Users/user/Documents/PanzerRush/PanzerRush/Content/bin/Windows/TankModels/Hull/PanzerKpfII.xnb</DestFile>
+  <DestTime>2018-05-04T16:07:32.3388644+02:00</DestTime>
   <Importer>FbxImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>ModelProcessor</Processor>
