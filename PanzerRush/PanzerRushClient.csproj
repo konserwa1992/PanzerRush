@@ -57,6 +57,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Camera\Camera.cs" />
+    <Compile Include="Content\Maps\MapAssets\SimpleAssetSheet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Content\Maps\MapAssets\SimpleAssetSheet.Designer.cs">
+      <DependentUpon>SimpleAssetSheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game1.cs" />
     <Compile Include="Map\Element.cs" />
     <Compile Include="Map\Grids\Grid.cs" />
@@ -64,10 +70,17 @@
     <Compile Include="Map\IElement.cs" />
     <Compile Include="Map\Layer\Layer.cs" />
     <Compile Include="Map\Map.cs" />
+    <Compile Include="Map\MapAssets\MapAssetSheet.cs" />
+    <Compile Include="Map\MapAssets\MapAsset.cs" />
     <Compile Include="Model\MeshModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceManager\ResourceManager.cs" />
+    <Compile Include="Units\Crew\Comander.cs" />
+    <Compile Include="Units\Crew\ICommander.cs" />
+    <Compile Include="Units\Crew\CrewSkills\ISkill.cs" />
+    <Compile Include="Units\IUnit.cs" />
+    <Compile Include="Units\Tanks\TankDestroyer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -100,8 +113,8 @@
     <None Include="Content\Maps\map1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\TankModels\Hull\PanzerKpfII.fbx" />
-    <None Include="Content\TankModels\Hull\pzIII.dae" />
+    <None Include="Content\Models\TankModels\Hull\PanzerKpfII.fbx" />
+    <None Include="Content\Models\TankModels\Hull\pzIII.dae" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

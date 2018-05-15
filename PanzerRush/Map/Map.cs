@@ -1,17 +1,13 @@
 ﻿using Microsoft.Xna.Framework.Content;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Microsoft.Xna.Framework.Graphics;
-using RogueLike;
 
-namespace Maps
+
+namespace PanzerRush.Map
 {
-	class Map
+	class MapContainer
 	{
 		public List<string> GridsSheetsNames { set; get; }
 		public List<GridsSheetContainer> Grids{ private set; get; } = new List<GridsSheetContainer>();

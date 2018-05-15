@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RogueLike
+namespace PanzerRush
 {
 #if WINDOWS || LINUX
     /// <summary>

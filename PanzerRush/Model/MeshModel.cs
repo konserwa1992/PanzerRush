@@ -1,13 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 
-namespace RogueLike
+
+namespace PanzerRush
 {
 	class MeshModel
 	{
@@ -18,9 +14,14 @@ namespace RogueLike
 
 		float angle = 0.0f;
 
-		public void LoadMesh(ContentManager content,string meshName)
+		public MeshModel()
 		{
-			modelMesh = content.Load<Model>(meshName);
+		}
+
+
+		public void LoadMesh(ContentManager content, string MeshName)
+		{
+			modelMesh = content.Load<Model>(MeshName);
 		}
 
 		public void Draw(Camera camera)
@@ -31,7 +32,7 @@ namespace RogueLike
 				foreach (BasicEffect effect in mesh.Effects)
 				{
 					effect.EnableDefaultLighting();
-					effect.World = Matrix.CreateRotationX(MathHelper.ToRadians(-90))* Matrix.CreateRotationY(MathHelper.ToRadians(angle)) *  Matrix.CreateTranslation(Position) * Matrix.CreateScale(1.0f);
+					effect.World = Matrix.CreateScale(3)* Matrix.CreateRotationX(MathHelper.ToRadians(-90))* Matrix.CreateRotationY(MathHelper.ToRadians(angle)) *  Matrix.CreateTranslation(new Vector3(32,15,32)) * Matrix.CreateScale(1.0f);
 					effect.View = camera.View;
 					effect.Projection = camera.Projection;
 				}

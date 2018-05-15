@@ -1,15 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using RogueLike;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PanzerRush;
 
-namespace Maps
+namespace PanzerRush.Map
 {
 	class Layer
 	{
@@ -42,12 +39,12 @@ namespace Maps
 							verticesList.Add(new VertexPositionNormalTexture(
 								new Vector3((x + 1) * 64, LayerIndex, y * 64),
 								new Vector3(0, 1, 0),
-								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
+								new Vector2((((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X+(float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX) / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y / (float)GridSheet.TextureSizeY))));
 
 							verticesList.Add(new VertexPositionNormalTexture(
 								new Vector3((x + 1) * 64, LayerIndex, (y + 1) * 64),
 								new Vector3(0, 1, 0),
-								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+								new Vector2((((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X + (float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX) / (float)GridSheet.TextureSizeX), (((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y+(float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY) / (float)GridSheet.TextureSizeY))));
 
 							verticesList.Add(new VertexPositionNormalTexture(
 								new Vector3(x * 64, LayerIndex, y * 64),
@@ -57,12 +54,12 @@ namespace Maps
 							verticesList.Add(new VertexPositionNormalTexture(
 								new Vector3((x + 1) * 64, LayerIndex, (y + 1) * 64),
 								new Vector3(0, 1, 0),
-								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+								new Vector2((((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X+(float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeX) / (float)GridSheet.TextureSizeX), (((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y+(float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY) / (float)GridSheet.TextureSizeY))));
 
 							verticesList.Add(new VertexPositionNormalTexture(
 								new Vector3(x * 64, LayerIndex, (y + 1) * 64),
 								new Vector3(0, 1, 0),
-								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), ((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY / (float)GridSheet.TextureSizeY))));
+								new Vector2(((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).X / (float)GridSheet.TextureSizeX), (((float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).Y+(float)GridSheet.GridsDataList.FirstOrDefault(g => g.ID == MapGridsData[x, y]).SizeY) / (float)GridSheet.TextureSizeY))));
 						}
 					}
 				}
@@ -86,9 +83,10 @@ namespace Maps
 			basicEffect.World = Matrix.CreateTranslation(Vector3.Zero);
 			basicEffect.View = camera.View;
 			basicEffect.Projection = camera.Projection;
-			basicEffect.TextureEnabled = true;
+			basicEffect.TextureEnabled = true;	
 			basicEffect.Texture = GridSheet.Texture;
-		
+			basicEffect.GraphicsDevice.BlendState = BlendState.AlphaBlend;
+			basicEffect.GraphicsDevice.BlendFactor = new Color(new Vector3(54/255,29/255,29/255));
 
 			device.SetVertexBuffer(LayerVertexBuffer);
 

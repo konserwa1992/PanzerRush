@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Maps
+namespace PanzerRush.Map
 {
 	class Grid
 	{
