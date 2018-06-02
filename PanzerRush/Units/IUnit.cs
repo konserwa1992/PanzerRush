@@ -10,11 +10,12 @@ namespace PanzerRush.Units
 	interface IUnit
 	{
 		int Health { set; get; }
-		HashSet<MeshModel> MeshCollection { get; set; }
 		ICommander UnitCommander { set; get; }
 
-		void Draw();
+
+		void LoadUnitMeshes(ContentManager content);
+		void Draw(Camera camera);
 		void Update();
-		void Attack(int x,int y);
+		void Attack(int squerCoordX, int squerCoordY);
 	}
 }

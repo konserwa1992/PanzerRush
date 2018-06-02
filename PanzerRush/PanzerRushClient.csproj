@@ -80,6 +80,7 @@
     <Compile Include="Units\Crew\ICommander.cs" />
     <Compile Include="Units\Crew\CrewSkills\ISkill.cs" />
     <Compile Include="Units\IUnit.cs" />
+    <Compile Include="Units\Tanks\MidTank.cs" />
     <Compile Include="Units\Tanks\TankDestroyer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,7 +125,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Units\TanksParts\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

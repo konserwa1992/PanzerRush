@@ -7,10 +7,14 @@ namespace PanzerRush
 {
 	class MeshModel
 	{
-		public Vector3 Position { get; set; } = Vector3.Zero;
+		public string MeshName { get; set; }
+		public string MeshFileName { get; set; }
+		private Model modelMesh;
 		public Vector3 Rotation { get; set; } = Vector3.Zero;
+		public Vector3 LocalPosition { get; set; } = Vector3.Zero;
+		public Vector3 WorldPosition { get; set; } = Vector3.Zero;
 
-		Model modelMesh;
+
 
 		float angle = 0.0f;
 
@@ -19,9 +23,9 @@ namespace PanzerRush
 		}
 
 
-		public void LoadMesh(ContentManager content, string MeshName)
+		public void LoadMesh(ContentManager content)
 		{
-			modelMesh = content.Load<Model>(MeshName);
+			modelMesh = content.Load<Model>(MeshFileName);
 		}
 
 		public void Draw(Camera camera)
